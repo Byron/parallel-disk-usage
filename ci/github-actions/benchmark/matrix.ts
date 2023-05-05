@@ -94,10 +94,10 @@ export const COMPETING_BENCHMARK_MATRIX: readonly CompetingBenchmarkCategory[] =
     pduCliArgs: ['--quantity=len'],
     competitors: [
       ['dust', '--apparent-size'],
-      ['dua', '--apparent-size'],
+      ['dua', '-l', '--apparent-size'],
       ['ncdu', '-o', '/dev/stdout', '-0'],
-      ['gdu', '--show-apparent-size', '--non-interactive', '--no-progress'],
-      ['du', '--apparent-size'],
+      ['gdu', '-l', '--show-apparent-size', '--non-interactive', ,'--no-progress'],
+      ['du', '-l', '--apparent-size'],
     ],
   },
   {
@@ -105,10 +105,10 @@ export const COMPETING_BENCHMARK_MATRIX: readonly CompetingBenchmarkCategory[] =
     pduCliArgs: ['--quantity=blksize'],
     competitors: [
       ['dust'],
-      ['dua'],
+      ['dua', '-l'],
       ['ncdu', '-o', '/dev/stdout', '-0'],
-      ['gdu', '--non-interactive', '--no-progress'],
-      ['du'],
+      ['gdu', '-l', '--non-interactive', '--no-progress'],
+      ['du', '-l'],
     ],
   },
   {
@@ -123,8 +123,8 @@ export const COMPETING_BENCHMARK_MATRIX: readonly CompetingBenchmarkCategory[] =
     pduCliArgs: ['--max-depth=1'],
     competitors: [
       ['dutree', '--summary'],
-      ['dua', '--apparent-size'],
-      ['du', '--apparent-size', '--summarize'],
+      ['dua', '-l', '--apparent-size'],
+      ['du', '-l', '--apparent-size', '--summarize'],
     ],
   },
   {
@@ -133,27 +133,27 @@ export const COMPETING_BENCHMARK_MATRIX: readonly CompetingBenchmarkCategory[] =
     competitors: [
       ['dutree'],
       ['ncdu', '-o', '/dev/stdout', '-0'],
-      ['du', '--apparent-size'],
+      ['du', '-l', '--apparent-size'],
     ],
   },
   {
     id: 'no-sort',
     pduCliArgs: ['--no-sort'],
     competitors: [
-      ['du', '--apparent-size'],
-      ['dua', '--apparent-size'],
+      ['du', '-l', '--apparent-size'],
+      ['dua', '-l', '--apparent-size'],
       ['ncdu', '-o', '/dev/stdout', '-0'],
-      ['gdu', '--show-apparent-size', '--non-interactive', '--no-progress'],
+      ['gdu', '-l', '--show-apparent-size', '--non-interactive', '--no-progress'],
     ],
   },
   {
     id: 'no-sort+summary',
     pduCliArgs: ['--no-sort', '--max-depth=1'],
     competitors: [
-      ['dua', '--apparent-size'],
+      ['dua', '-l', '--apparent-size'],
       ['ncdu', '-o', '/dev/null', '-0'],
-      ['gdu', '--show-apparent-size', '--non-interactive', '--no-progress'],
-      ['du', '--apparent-size', '--summarize'],
+      ['gdu','-l', '--show-apparent-size', '--non-interactive', '--no-progress'],
+      ['du', '-l', '--apparent-size', '--summarize'],
     ],
   },
   {
@@ -161,7 +161,7 @@ export const COMPETING_BENCHMARK_MATRIX: readonly CompetingBenchmarkCategory[] =
     pduCliArgs: ['--progress'],
     competitors: [
       ['ncdu', '-o', '/dev/stdout', '-1'],
-      ['gdu', '--show-apparent-size', '--non-interactive'],
+      ['gdu', '-l', '--show-apparent-size', '--non-interactive'],
     ],
   },
 ]
